@@ -1,0 +1,132 @@
+{
+  "definitions": [
+    {
+      "title": "Gallery Accordion",
+      "id": "gallery-accordion",
+      "model": "gallery-accordion",
+      "filter": "gallery-accordion",
+      "plugins": {
+        "da": {
+          "name": "gallery-accordion",
+          "rows": 0,
+          "columns": 0
+        }
+      }
+    },
+    {
+      "title": "Gallery Accordion Item",
+      "id": "gallery-accordion-item",
+      "model": "gallery-accordion-item",
+      "filter": "gallery-accordion-item",
+      "plugins": {
+        "da": {
+          "name": "gallery-accordion-item",
+          "rows": 1,
+          "columns": 1
+        }
+      }
+    },
+    {
+      "title": "Gallery Accordion Carousel",
+      "id": "gallery-accordion-carousel",
+      "model": "gallery-accordion-carousel",
+      "plugins": {
+        "da": {
+          "name": "gallery-accordion-carousel",
+          "rows": 2,
+          "columns": 4,
+          "fields": [
+            { "name": "image",       "selector": "div:nth-child(1)>picture>img[src]" },
+            { "name": "imageAlt",    "selector": "div:nth-child(1)>picture>img[alt]" },
+            { "name": "title",       "selector": "div:nth-child(2)>h2" },
+            { "name": "description", "selector": "div:nth-child(2)>p" },
+            { "name": "ctaText",     "selector": "div:nth-child(3)>a" },
+            { "name": "ctaHref",     "selector": "div:nth-child(3)>a[href]" },
+            { "name": "autoplay",    "selector": "div:nth-child(4)>:first-child" }
+          ]
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "gallery-accordion",
+      "fields": []
+    },
+    {
+      "id": "gallery-accordion-item",
+      "fields": [
+        {
+          "component": "richtext",
+          "name": "summary",
+          "label": "Section Title",
+          "valueType": "string",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "gallery-accordion-carousel",
+      "fields": [
+        {
+          "component": "reference",
+          "name": "image",
+          "label": "Slide Image",
+          "valueType": "string",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "name": "imageAlt",
+          "label": "Image Alt Text",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "name": "title",
+          "label": "Slide Title",
+          "valueType": "string"
+        },
+        {
+          "component": "richtext",
+          "name": "description",
+          "label": "Slide Description",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "name": "ctaText",
+          "label": "CTA Text",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "name": "ctaHref",
+          "label": "CTA Link",
+          "valueType": "string"
+        },
+        {
+          "component": "select",
+          "name": "autoplay",
+          "label": "Autoplay",
+          "valueType": "string",
+          "value": "false",
+          "options": [
+            { "name": "Yes", "value": "true" },
+            { "name": "No",  "value": "false" }
+          ]
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "gallery-accordion",
+      "components": ["gallery-accordion-item"]
+    },
+    {
+      "id": "gallery-accordion-item",
+      "components": ["gallery-accordion-carousel"]
+    }
+  ]
+}

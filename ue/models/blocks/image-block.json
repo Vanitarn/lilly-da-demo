@@ -1,0 +1,144 @@
+{
+  "definitions": [
+    {
+      "title": "Image Block",
+      "id": "image-block",
+      "model": "image-block",
+      "plugins": {
+        "da": {
+          "name": "image-block",
+          "rows": 7,
+          "columns": 1,
+          "fields": [
+            { "name": "image",              "selector": "div:nth-child(1)>div>picture>img[src]" },
+            { "name": "imageAlt",           "selector": "div:nth-child(1)>div>picture>img[alt]" },
+            { "name": "mobImage",           "selector": "div:nth-child(2)>div>picture>img[src]" },
+            { "name": "mobImageAlt",        "selector": "div:nth-child(2)>div>picture>img[alt]" },
+            { "name": "imageblock_label",   "selector": "div:nth-child(3)>div>:first-child" },
+            { "name": "imageblock_rte",     "selector": "div:nth-child(3)>div" },
+            { "name": "squareEdges",        "selector": "div:nth-child(4)>div>:first-child" },
+            { "name": "fullWidth",          "selector": "div:nth-child(5)>div>:first-child" },
+            { "name": "instagramProfile",   "selector": "div:nth-child(6)>div>:first-child" },
+            { "name": "checkbox",           "selector": "div:nth-child(7)>div>:first-child" }
+          ]
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "image-block",
+      "fields": [
+        {
+          "component": "reference",
+          "name": "image",
+          "label": "Desktop Image",
+          "valueType": "string",
+          "multi": false,
+          "required": true,
+          "description": "Row 1 — Upload desktop image."
+        },
+        {
+          "component": "text",
+          "name": "imageAlt",
+          "label": "Desktop Image Alt Text",
+          "valueType": "string",
+          "required": true,
+          "description": "Row 1 — Field-collapse: suffix 'Alt' merges with image reference → rendered as img[alt]"
+        },
+        {
+          "component": "reference",
+          "name": "mobImage",
+          "label": "Mobile Image",
+          "valueType": "string",
+          "multi": false,
+          "description": "Row 2 — Upload mobile image. Falls back to desktop image if omitted."
+        },
+        {
+          "component": "text",
+          "name": "mobImageAlt",
+          "label": "Mobile Image Alt Text",
+          "valueType": "string",
+          "description": "Row 2 — Field-collapse: suffix 'Alt' merges with mobImage reference → rendered as img[alt]"
+        },
+        {
+          "component": "text",
+          "name": "imageblock_label",
+          "label": "Label",
+          "valueType": "string",
+          "description": "Row 3 — Label shown above the description (first line)"
+        },
+        {
+          "component": "richtext",
+          "name": "imageblock_rte",
+          "label": "Extended Image Description",
+          "valueType": "string",
+          "description": "Row 3 — Description content below the label"
+        },
+        {
+          "component": "boolean",
+          "name": "squareEdges",
+          "label": "Square Edges",
+          "valueType": "boolean",
+          "value": false,
+          "description": "Row 4 — Check to apply square edges on image"
+        },
+        {
+          "component": "boolean",
+          "name": "fullWidth",
+          "label": "Full Width",
+          "valueType": "boolean",
+          "value": false,
+          "description": "Row 5 — Check to make the image full width"
+        },
+        {
+          "component": "checkbox-group",
+          "label": "Instagram Profile",
+          "name": "instagramProfile",
+          "valueType": "boolean",
+          "description": "Select if the Executive's Instagram profile is available",
+          "options": [
+            {
+              "name": "InstagramProfile",
+              "value": "true"
+            }
+          ]
+        },
+        {
+          "component": "checkbox-group",
+          "label": "Checkbox Group",
+          "name": "checkbox",
+          "valueType": "string[]",
+          "options": [
+            { "name": "Option 1", "value": "option1" },
+            { "name": "Option 2", "value": "option2" }
+          ]
+        },
+        {
+          "component": "multiselect",
+          "name": "classes",
+          "label": "Multiselect field",
+          "valueType": "string",
+          "options": [
+            {
+              "name": "Theme",
+              "children": [
+                { "name": "Light", "value": "light" },
+                { "name": "Dark",  "value": "dark" }
+              ]
+            },
+            {
+              "name": "Type",
+              "children": [
+                { "name": "Alpha", "value": "alpha" },
+                { "name": "Beta",  "value": "beta" },
+                { "name": "Gamma", "value": "gamma" }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

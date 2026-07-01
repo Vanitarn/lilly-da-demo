@@ -1,0 +1,87 @@
+[
+  {
+    "id": "main",
+    "components": [
+      "section"
+    ]
+  },
+  {
+    "id": "section",
+    "components": [
+      "accordion",
+      "cards",
+      "carousel",
+      "columns",
+      "embed",
+      "fragment",
+      "form",
+      "gallery-accordion",
+      "hero",
+      "image",
+      "image-block",
+      "quote",
+      "search",
+      "tabs",
+      "table",
+      "text",
+      "video",
+      "dynamicmedia-template",
+      "teaser"
+    ]
+  },
+  {
+    "id": "accordion",
+    "components": [
+      "accordion-item"
+    ]
+  },
+  {
+    "id": "cards",
+    "components": [
+      "card"
+    ]
+  },
+  {
+    "id": "carousel",
+    "components": [
+      "carousel-card"
+    ]
+  },
+  {
+    "id": "columns",
+    "components": [
+      "columns-row"
+    ]
+  },
+  {
+    "id": "columns-row",
+    "components": [
+      "columns-cell"
+    ]
+  },
+  {
+    "id": "columns-cell",
+    "components": [
+      "text",
+      "image"
+    ]
+  },
+  {
+    "id": "gallery-accordion",
+    "components": [
+      "gallery-accordion-item"
+    ]
+  },
+  {
+    "id": "gallery-accordion-item",
+    "components": [
+      "gallery-accordion-carousel"
+    ]
+  },
+  {
+    "id": "tabs",
+    "components": [
+      "tabs-item"
+    ]
+  }
+]
