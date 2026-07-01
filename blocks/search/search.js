@@ -228,7 +228,9 @@ function searchInput(block, config) {
     handleSearch(e, block, config);
   });
 
-  input.addEventListener('keyup', (e) => { if (e.code === 'Escape') { clearSearch(block); } });
+  input.addEventListener('keyup', (e) => {
+    if (e.code === 'Escape') { clearSearch(block); }
+  });
 
   return input;
 }

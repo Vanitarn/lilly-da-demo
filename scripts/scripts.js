@@ -39,6 +39,8 @@ export async function loadPage() {
 }
 await loadPage();
 
+export { moveInstrumentation } from '../ue/scripts/ue-utils.js';
+
 (function da() {
   const { searchParams } = new URL(window.location.href);
   const hasPreview = searchParams.has('dapreview');

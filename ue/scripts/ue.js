@@ -10,8 +10,16 @@
  * governing permissions and limitations under the License.
  */
 
-import { showSlide } from '../../blocks/carousel/carousel.js';
 import { moveInstrumentation } from './ue-utils.js';
+
+const showSlide = (block, index) => {
+  const slides = block.querySelectorAll('li');
+  const i = parseInt(index, 10);
+  slides.forEach((slide, idx) => {
+    slide.setAttribute('aria-hidden', idx !== i);
+    if (idx === i) slide.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+  });
+};
 
 const setupObservers = () => {
   const mutatingBlocks = document.querySelectorAll('div.cards, div.carousel, div.accordion');
